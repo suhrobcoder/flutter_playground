@@ -34,13 +34,51 @@ class MyHomePage extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            Text("Text"),
-            RaisedButton(
-              onPressed: () {},
-              child: Text("Button"),
+            Text(
+              "Text",
+              style: TextStyle(color: Colors.green, fontSize: 30),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  RaisedButton(
+                    onPressed: () {},
+                    child: Text("Raised Button"),
+                  ),
+                  FlatButton(onPressed: () {}, child: Text("Flat Button")),
+                  OutlinedButton(
+                      onPressed: () {}, child: Text("Outlined Button")),
+                  TextButton(onPressed: () {}, child: Text("Text Button")),
+                ],
+              ),
             ),
             Icon(Icons.home),
             TextField(),
+            CircularProgressIndicator(),
+            BottomNavigationBar(items: [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings), label: "Settings"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person), label: "Profile"),
+            ]),
+            Card(
+              shadowColor: Colors.green.withAlpha(30),
+              elevation: 16,
+              child: InkWell(
+                focusColor: Colors.blue,
+                child: Container(
+                  padding: EdgeInsets.all(50),
+                  child: Text("Text"),
+                ),
+              ),
+            ),
+            Image.asset(
+              "assets/images/3s.png",
+              width: 100,
+              height: 100,
+            )
           ],
         ),
       ),
